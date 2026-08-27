@@ -9,7 +9,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 /              Home (split-screen hero, featured bikes, services, contact CTA)
 /bikes         Bike models / inventory listing
 /services      Sales, finance, insurance, service center details
-/contact       Address, phone, WhatsApp, hours, map, contact form
+/contact       Address, phone, WhatsApp, Instagram, email, hours, map, contact form
 ```
 
 ## Sections to build (per user selection)
@@ -19,20 +19,26 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
    - Headline: "Shree Sainath Motors — Authorized Hero MotoCorp Showroom, Paratwada"
    - Subheadline: new-bike sales, finance, insurance, servicing.
    - CTAs: "Explore Bikes", "Visit Showroom", "WhatsApp Us".
+   - Sticky header with quick contact: phone, WhatsApp, Instagram, email icons.
 
 2. **Bike models / inventory**
    - Grid of Hero bikes available at the showroom.
    - Each card: bike image, name, starting price, engine/cc, mileage, key color variants, "View Details" / "Enquire Now" buttons.
+   - Enquiry CTA pre-fills WhatsApp message with bike name.
    - Data sourced from a local static data file (no backend required for launch).
 
 3. **Services**
    - Four service blocks: New Bike Sales, Finance Assistance, Insurance Renewal, Service & Repairs.
    - Each block: icon, short description, key benefit, CTA.
+   - CTAs link to WhatsApp or contact form with pre-selected service interest.
 
 4. **Contact / visit us**
-   - Full address, phone, WhatsApp number, email, business hours.
+   - Full address, phone, WhatsApp number, Instagram handle, email, business hours.
+   - Clickable WhatsApp link with pre-filled greeting.
+   - Clickable Instagram profile link.
+   - Clickable email mailto link and phone tel link.
    - Embedded map link/iframe for Paratwada location.
-   - Contact form: name, phone, bike interest, message.
+   - Contact form: name, phone, bike/service interest, message.
    - Form submissions handled via a secure server function (no exposed API keys).
 
 ## Design system
@@ -50,7 +56,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 ## SEO & local search
 
 - Unique `head()` metadata (title, description, og:title, og:description, og:type, twitter:card) on every route.
-- Local business JSON-LD (`AutomotiveBusiness` or `MotorcycleDealer`) on `/contact`.
+- Local business JSON-LD (`AutomotiveBusiness` or `MotorcycleDealer`) on `/contact` including phone, WhatsApp, email, and social profile.
 - Semantic HTML, alt text on all images, responsive viewport.
 - `public/robots.txt` already allows crawlers; add `sitemap.xml` server route.
 - Content optimized for "Hero showroom Paratwada", "Hero bikes Paratwada", "Shree Sainath Motors".
@@ -59,7 +65,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 
 - No hardcoded secrets; any third-party keys (email/SMS gateway) read server-side only inside `createServerFn` handlers.
 - Contact form validated with Zod; rate-limited server-side to prevent abuse.
-- No client-side exposure of API keys or admin credentials.
+- WhatsApp and email links use proper URL encoding; no client-side exposure of API keys or admin credentials.
 - No auth/roles required for a public showroom site.
 - `.env` / secrets managed through Lovable secrets if a notification service is added later.
 
@@ -78,7 +84,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 
 ## Launch checklist
 
-- [ ] Replace placeholder contact details with real showroom phone/WhatsApp/address/hours.
+- [ ] Replace placeholder contact details with real showroom phone/WhatsApp/Instagram/email/address/hours.
 - [ ] Replace generated bike images with official Hero MotoCorp assets if available.
 - [ ] Verify map embed points to the correct Paratwada location.
 - [ ] Test contact form submission end-to-end.
