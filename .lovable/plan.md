@@ -179,6 +179,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 - [ ] Provide real showroom phone, WhatsApp number, Instagram handle, email, address, and hours.
 - [ ] Provide exact showroom coordinates (or Google Maps link) for the map deep-link.
 - [ ] Create the first admin staff account.
+- [ ] Provide Google reCAPTCHA site key and secret key (free, from google.com/recaptcha).
 - [ ] Verify the sending email domain for reminder mails.
 - [ ] Replace generated bike images with official Hero MotoCorp assets if available.
 - [ ] Test the map link on both an iPhone and an Android device.
