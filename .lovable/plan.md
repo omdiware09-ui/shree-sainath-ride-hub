@@ -6,10 +6,18 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 ## Pages & routes
 
 ```text
-/              Home (split-screen hero, featured bikes, services, contact CTA)
-/bikes         Bike models / inventory listing
-/services      Sales, finance, insurance, service center details
-/contact       Address, phone, WhatsApp, Instagram, email, hours, map, contact form
+/                    Home (cinematic hero, featured bikes, offers, services, testimonials, contact)
+/bikes               Bike models / inventory listing with filters
+/bikes/$slug         Bike detail page (gallery, variants, specs, EMI, enquiry)
+/compare             Side-by-side bike comparison
+/services            Sales, finance, insurance, service center details
+/book-test-ride      Test ride booking
+/book-service        Service slot booking
+/offers              Current offers and new launches
+/gallery             Showroom and delivery gallery
+/about               Showroom story, team, why choose us
+/contact             Address, phone, WhatsApp, Instagram, email, hours, map, contact form
+/admin               Staff dashboard (login protected)
 ```
 
 ## Sections to build (per user selection)
