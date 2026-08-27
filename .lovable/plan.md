@@ -6,10 +6,18 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 ## Pages & routes
 
 ```text
-/              Home (split-screen hero, featured bikes, services, contact CTA)
-/bikes         Bike models / inventory listing
-/services      Sales, finance, insurance, service center details
-/contact       Address, phone, WhatsApp, Instagram, email, hours, map, contact form
+/                    Home (cinematic hero, featured bikes, offers, services, testimonials, contact)
+/bikes               Bike models / inventory listing with filters
+/bikes/$slug         Bike detail page (gallery, variants, specs, EMI, enquiry)
+/compare             Side-by-side bike comparison
+/services            Sales, finance, insurance, service center details
+/book-test-ride      Test ride booking
+/book-service        Service slot booking
+/offers              Current offers and new launches
+/gallery             Showroom and delivery gallery
+/about               Showroom story, team, why choose us
+/contact             Address, phone, WhatsApp, Instagram, email, hours, map, contact form
+/admin               Staff dashboard (login protected)
 ```
 
 ## Sections to build (per user selection)
@@ -73,6 +81,33 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
    - Duplicate-send protection: every reminder is recorded so a customer is never mailed twice for the same event.
    - Admin can pause the automation or edit templates from the dashboard.
 
+## Premium features (inspired by leading automotive brand sites)
+
+**Buying journey**
+- **Book a test ride** — pick a bike, date, and time slot; confirmation email plus an entry in the admin dashboard.
+- **EMI calculator** — live slider for down payment, tenure, and interest rate showing the monthly EMI per bike; "Apply for finance" CTA.
+- **Compare bikes** — select two or three models and see specs side by side.
+- **On-road price estimator** — ex-showroom price plus RTO, insurance, and accessories, itemized.
+- **Exchange / trade-in enquiry** — tell us your old bike and get a call back with an estimate.
+- **Book a service slot** — pick a date and describe the issue; feeds the same reminder system.
+
+**Presentation polish**
+- **Cinematic hero** — full-bleed bike imagery with subtle parallax and a restrained scroll reveal.
+- **Bike detail pages** — dedicated route per model with gallery, color-variant switcher, spec table, mileage and price highlights, and sticky enquiry bar.
+- **Color variant switcher** — tap a swatch and the bike image changes.
+- **Offers / launch banner** — highlight current festive offers and new arrivals.
+- **Showroom gallery** — photos of the showroom, service bay, and delivery moments.
+- **Customer testimonials + delivery wall** — real reviews and happy-delivery photos.
+- **Counters** — bikes delivered, years in business, services completed.
+- **Micro-interactions** — smooth hover states, magnetic CTA buttons, section reveals, and a sticky quick-action bar (Call · WhatsApp · Directions) on mobile.
+
+**Trust & convenience**
+- **Why choose us** — authorized Hero dealer, genuine parts, trained technicians, transparent pricing.
+- **FAQ accordion** — finance documents, service intervals, warranty, timings.
+- **Google reviews / ratings strip**.
+- **Multi-language toggle** — English and Marathi for local customers.
+- **Dark/light aware theming** built on the Charcoal & Ember tokens.
+
 ## Design system
 
 - **Palette**: Charcoal & Ember
@@ -84,6 +119,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 - **Typography**: Urbanist (headings) + Epilogue (body).
 - **Layout**: Split-screen hero; full-width bands for bikes, services, and contact.
 - **Radius / spacing**: Modern, generous whitespace, sharp but polished cards, Ember accent on CTAs.
+- **Motion**: Restrained and purposeful — no fade-in on every element.
 
 ## SEO & local search
 
