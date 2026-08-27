@@ -15,7 +15,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 /book-service        Service slot booking
 /offers              Current offers and new launches
 /gallery             Showroom and delivery gallery
-/about               Showroom story, team, why choose us
+/about               Team, credentials, and why choose us
 /contact             Address, phone, WhatsApp, Instagram, email, hours, map, contact form
 /admin               Staff dashboard (login protected)
 ```
@@ -106,6 +106,9 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 - **Google reviews / ratings strip**.
 - **Multi-language toggle** — English and Marathi for local customers.
 - **Dark/light aware theming** built on the Charcoal & Ember tokens.
+
+**About page**
+- Team, credentials, and why customers trust Shree Sainath Motors — no separate "our story" narrative.
 
 ## Design system
 
