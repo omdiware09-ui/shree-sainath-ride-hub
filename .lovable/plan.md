@@ -55,6 +55,23 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
    - Escalation: offers a "Chat on WhatsApp" or "Call showroom" button when it cannot answer.
    - Powered by Lovable Cloud + Lovable AI (no external API keys for you to manage).
 
+7. **Admin dashboard (staff only, at `/admin`)**
+   - Login-protected area, separate from the public site.
+   - **Overview**: enquiry count, chatbot conversations, WhatsApp/call click-throughs, most-viewed bikes, upcoming service reminders due.
+   - **Enquiries**: table of contact-form submissions with status (new / contacted / closed), search and filter, export to CSV.
+   - **Customers**: name, phone, email, bike purchased, purchase date, last service date, next service due.
+   - **Reminders**: view scheduled and sent reminder emails, resend or cancel one.
+   - **Logs**: activity log of admin actions, email send results, chatbot errors, and failed form submissions.
+   - **Bike catalog editor**: add/edit/hide bike models and prices without a code change.
+
+8. **Automated email reminders**
+   - Scheduled job runs daily and sends:
+     - **Service reminders** — e.g. 30 days, 7 days, and on the due date before the next service.
+     - **Follow-up mails** — thank-you after purchase, feedback request after a service visit.
+     - **Insurance renewal reminders** — before the policy expiry date.
+   - Each reminder is templated in the showroom's branding and includes call/WhatsApp buttons.
+   - Duplicate-send protection: every reminder is recorded so a customer is never mailed twice for the same event.
+   - Admin can pause the automation or edit templates from the dashboard.
 
 ## Design system
 
