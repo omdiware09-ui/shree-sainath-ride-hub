@@ -142,6 +142,16 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 - Every email send and admin action is written to an audit log.
 - WhatsApp, email, and map links use proper URL encoding.
 
+### Human verification (reCAPTCHA)
+
+- **Google reCAPTCHA v3** (invisible score-based) on every public submission: contact form, test-ride booking, service booking, exchange/finance enquiry, and the chatbot's first message per session.
+- No puzzles or checkbox for genuine users — the widget runs silently and returns a score.
+- The site key lives in the frontend; the secret key is stored securely and used only inside server code.
+- Every submission is verified server-side before anything is saved or emailed: low-score or failed-token requests are rejected with a friendly "please try again" message and logged as a failed submission in the admin logs.
+- Fallback: if the score is borderline, show a reCAPTCHA v2 checkbox challenge instead of rejecting outright, so real customers are never blocked.
+- Combined with the existing Zod validation and per-IP rate limits, this stops spam bots from flooding enquiries and burning AI chatbot credits.
+- Small "protected by reCAPTCHA" note with Google privacy/terms links, as Google requires.
+
 ## Assets needed
 
 - Hero bike image (generate or use Hero MotoCorp approved imagery).
