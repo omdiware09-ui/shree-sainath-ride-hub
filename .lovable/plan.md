@@ -85,7 +85,6 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 
 **Buying journey**
 - **Book a test ride** — pick a bike, date, and time slot; confirmation email plus an entry in the admin dashboard.
-- **EMI calculator** — live slider for down payment, tenure, and interest rate showing the monthly EMI per bike; "Apply for finance" CTA.
 - **Compare bikes** — select two or three models and see specs side by side.
 - **On-road price estimator** — ex-showroom price plus RTO, insurance, and accessories, itemized.
 - **Exchange / trade-in enquiry** — tell us your old bike and get a call back with an estimate.
