@@ -15,7 +15,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 /book-service        Service slot booking
 /offers              Current offers and new launches
 /gallery             Showroom and delivery gallery
-/about               Showroom story, team, why choose us
+/about               Team, credentials, and why choose us
 /contact             Address, phone, WhatsApp, Instagram, email, hours, map, contact form
 /admin               Staff dashboard (login protected)
 ```
