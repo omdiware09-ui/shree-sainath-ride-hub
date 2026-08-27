@@ -107,6 +107,9 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 - **Multi-language toggle** — English and Marathi for local customers.
 - **Dark/light aware theming** built on the Charcoal & Ember tokens.
 
+**About page**
+- Team, credentials, and why customers trust Shree Sainath Motors — no separate "our story" narrative.
+
 ## Design system
 
 - **Palette**: Charcoal & Ember
