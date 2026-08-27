@@ -1,6 +1,7 @@
 # Shree Sainath Motors — Website Plan
 
 ## Goal
+
 Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an authorized Hero MotoCorp showroom in Paratwada. The site should turn local search traffic into showroom visits and inquiries.
 
 ## Pages & routes
@@ -8,7 +9,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 ```text
 /                    Home (cinematic hero, featured bikes, offers, services, testimonials, contact)
 /bikes               Bike models / inventory listing with filters
-/bikes/$slug         Bike detail page (gallery, variants, specs, EMI, enquiry)
+/bikes/$slug         Bike detail page (gallery, variants, specs, enquiry)
 /compare             Side-by-side bike comparison
 /services            Sales, finance, insurance, service center details
 /book-test-ride      Test ride booking
@@ -23,67 +24,61 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 ## Sections to build (per user selection)
 
 1. **Hero / showroom intro**
-   - Split-screen layout: showroom identity and CTA on the left, featured Hero bike visual on the right.
-   - Headline: "Shree Sainath Motors — Authorized Hero MotoCorp Showroom, Paratwada"
-   - Subheadline: new-bike sales, finance, insurance, servicing.
-   - CTAs: "Explore Bikes", "Visit Showroom", "WhatsApp Us".
-   - Sticky header with quick contact: phone, WhatsApp, Instagram, email icons.
-
+  - Split-screen layout: showroom identity and CTA on the left, featured Hero bike visual on the right.
+  - Headline: "Shree Sainath Motors — Authorized Hero MotoCorp Showroom, Paratwada"
+  - Subheadline: new-bike sales, finance, insurance, servicing.
+  - CTAs: "Explore Bikes", "Visit Showroom", "WhatsApp Us".
+  - Sticky header with quick contact: phone, WhatsApp, Instagram, email icons.
 2. **Bike models / inventory**
-   - Grid of Hero bikes available at the showroom.
-   - Each card: bike image, name, starting price, engine/cc, mileage, key color variants, "View Details" / "Enquire Now" buttons.
-   - Enquiry CTA pre-fills WhatsApp message with bike name.
-   - Data sourced from a local static data file (no backend required for launch).
-
+  - Grid of Hero bikes available at the showroom.
+  - Each card: bike image, name, starting price, engine/cc, mileage, key color variants, "View Details" / "Enquire Now" buttons.
+  - Enquiry CTA pre-fills WhatsApp message with bike name.
+  - Data sourced from a local static data file (no backend required for launch).
 3. **Services**
-   - Four service blocks: New Bike Sales, Finance Assistance, Insurance Renewal, Service & Repairs.
-   - Each block: icon, short description, key benefit, CTA.
-   - CTAs link to WhatsApp or contact form with pre-selected service interest.
-
+  - Four service blocks: New Bike Sales, Finance Assistance, Insurance Renewal, Service & Repairs.
+  - Each block: icon, short description, key benefit, CTA.
+  - CTAs link to WhatsApp or contact form with pre-selected service interest.
 4. **Contact / visit us**
-   - Full address, phone, WhatsApp number, Instagram handle, email, business hours.
-   - Clickable WhatsApp link with pre-filled greeting.
-   - Clickable Instagram profile link.
-   - Clickable email mailto link and phone tel link.
-   - Contact form: name, phone, bike/service interest, message.
-   - Form submissions handled via a secure server function (no exposed API keys).
-
+  - Full address, phone, WhatsApp number, Instagram handle, email, business hours.
+  - Clickable WhatsApp link with pre-filled greeting.
+  - Clickable Instagram profile link.
+  - Clickable email mailto link and phone tel link.
+  - Contact form: name, phone, bike/service interest, message.
+  - Form submissions handled via a secure server function (no exposed API keys).
 5. **Map location with smart deep-link**
-   - Embedded map preview of the Paratwada showroom location.
-   - Clicking the map (or the "Get Directions" button) detects the device and opens the right app:
-     - iOS / macOS: Apple Maps (`maps://` / `https://maps.apple.com/?q=...`)
-     - Android and desktop: Google Maps (`https://www.google.com/maps/search/?api=1&query=...`)
-   - Detection runs client-side only (after hydration) so SSR stays stable.
-   - Fallback to Google Maps web if detection is inconclusive.
-
+  - Embedded map preview of the Paratwada showroom location.
+  - Clicking the map (or the "Get Directions" button) detects the device and opens the right app:
+    - iOS / macOS: Apple Maps (`maps://` / `https://maps.apple.com/?q=...`)
+    - Android and desktop: Google Maps (`https://www.google.com/maps/search/?api=1&query=...`)
+  - Detection runs client-side only (after hydration) so SSR stays stable.
+  - Fallback to Google Maps web if detection is inconclusive.
 6. **AI chatbot assistant**
-   - Floating chat bubble available on every page, styled in the Charcoal & Ember theme.
-   - Answers visitor questions about bike models, prices, finance, insurance, service, showroom hours, and location.
-   - Grounded in the site's own bike and service data plus showroom contact details, so it does not invent facts.
-   - Escalation: offers a "Chat on WhatsApp" or "Call showroom" button when it cannot answer.
-   - Powered by Lovable Cloud + Lovable AI (no external API keys for you to manage).
-
+  - Floating chat bubble available on every page, styled in the Charcoal & Ember theme.
+  - Answers visitor questions about bike models, prices, finance, insurance, service, showroom hours, and location.
+  - Grounded in the site's own bike and service data plus showroom contact details, so it does not invent facts.
+  - Escalation: offers a "Chat on WhatsApp" or "Call showroom" button when it cannot answer.
+  - Powered by Lovable Cloud + Lovable AI (no external API keys for you to manage).
 7. **Admin dashboard (staff only, at `/admin`)**
-   - Login-protected area, separate from the public site.
-   - **Overview**: enquiry count, chatbot conversations, WhatsApp/call click-throughs, most-viewed bikes, upcoming service reminders due.
-   - **Enquiries**: table of contact-form submissions with status (new / contacted / closed), search and filter, export to CSV.
-   - **Customers**: name, phone, email, bike purchased, purchase date, last service date, next service due.
-   - **Reminders**: view scheduled and sent reminder emails, resend or cancel one.
-   - **Logs**: activity log of admin actions, email send results, chatbot errors, and failed form submissions.
-   - **Bike catalog editor**: add/edit/hide bike models and prices without a code change.
-
+  - Login-protected area, separate from the public site.
+  - **Overview**: enquiry count, chatbot conversations, WhatsApp/call click-throughs, most-viewed bikes, upcoming service reminders due.
+  - **Enquiries**: table of contact-form submissions with status (new / contacted / closed), search and filter, export to CSV.
+  - **Customers**: name, phone, email, bike purchased, purchase date, last service date, next service due.
+  - **Reminders**: view scheduled and sent reminder emails, resend or cancel one.
+  - **Logs**: activity log of admin actions, email send results, chatbot errors, and failed form submissions.
+  - **Bike catalog editor**: add/edit/hide bike models and prices without a code change.
 8. **Automated email reminders**
-   - Scheduled job runs daily and sends:
-     - **Service reminders** — e.g. 30 days, 7 days, and on the due date before the next service.
-     - **Follow-up mails** — thank-you after purchase, feedback request after a service visit.
-     - **Insurance renewal reminders** — before the policy expiry date.
-   - Each reminder is templated in the showroom's branding and includes call/WhatsApp buttons.
-   - Duplicate-send protection: every reminder is recorded so a customer is never mailed twice for the same event.
-   - Admin can pause the automation or edit templates from the dashboard.
+  - Scheduled job runs daily and sends:
+    - **Service reminders** — e.g. 30 days, 7 days, and on the due date before the next service.
+    - **Follow-up mails** — thank-you after purchase, feedback request after a service visit.
+    - **Insurance renewal reminders** — before the policy expiry date.
+  - Each reminder is templated in the showroom's branding and includes call/WhatsApp buttons.
+  - Duplicate-send protection: every reminder is recorded so a customer is never mailed twice for the same event.
+  - Admin can pause the automation or edit templates from the dashboard.
 
 ## Premium features (inspired by leading automotive brand sites)
 
 **Buying journey**
+
 - **Book a test ride** — pick a bike, date, and time slot; confirmation email plus an entry in the admin dashboard.
 - **Compare bikes** — select two or three models and see specs side by side.
 - **On-road price estimator** — ex-showroom price plus RTO, insurance, and accessories, itemized.
@@ -91,6 +86,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 - **Book a service slot** — pick a date and describe the issue; feeds the same reminder system.
 
 **Presentation polish**
+
 - **Cinematic hero** — full-bleed bike imagery with subtle parallax and a restrained scroll reveal.
 - **Bike detail pages** — dedicated route per model with gallery, color-variant switcher, spec table, mileage and price highlights, and sticky enquiry bar.
 - **Color variant switcher** — tap a swatch and the bike image changes.
@@ -101,6 +97,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 - **Micro-interactions** — smooth hover states, magnetic CTA buttons, section reveals, and a sticky quick-action bar (Call · WhatsApp · Directions) on mobile.
 
 **Trust & convenience**
+
 - **Why choose us** — authorized Hero dealer, genuine parts, trained technicians, transparent pricing.
 - **FAQ accordion** — finance documents, service intervals, warranty, timings.
 - **Google reviews / ratings strip**.
@@ -108,6 +105,7 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 - **Dark/light aware theming** built on the Charcoal & Ember tokens.
 
 **About page**
+
 - Team, credentials, and why customers trust Shree Sainath Motors — no separate "our story" narrative.
 
 ## Design system
@@ -178,12 +176,12 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 
 ## Launch checklist
 
-- [ ] Provide real showroom phone, WhatsApp number, Instagram handle, email, address, and hours.
-- [ ] Provide exact showroom coordinates (or Google Maps link) for the map deep-link.
-- [ ] Create the first admin staff account.
-- [ ] Provide Google reCAPTCHA site key and secret key (free, from google.com/recaptcha).
-- [ ] Verify the sending email domain for reminder mails.
-- [ ] Replace generated bike images with official Hero MotoCorp assets if available.
-- [ ] Test the map link on both an iPhone and an Android device.
-- [ ] Test contact form, chatbot, admin login, and a reminder send end-to-end.
-- [ ] Run build and verify no lint/type errors.
+- Provide real showroom phone, WhatsApp number, Instagram handle, email, address, and hours.
+- Provide exact showroom coordinates (or Google Maps link) for the map deep-link.
+- Create the first admin staff account.
+- Provide Google reCAPTCHA site key and secret key (free, from google.com/recaptcha).
+- Verify the sending email domain for reminder mails.
+- Replace generated bike images with official Hero MotoCorp assets if available.
+- Test the map link on both an iPhone and an Android device.
+- Test contact form, chatbot, admin login, and a reminder send end-to-end.
+- Run build and verify no lint/type errors.
