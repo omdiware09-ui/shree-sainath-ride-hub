@@ -95,12 +95,16 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 
 ## Security & compliance
 
-- No hardcoded secrets; any third-party keys read server-side only inside `createServerFn` handlers.
+- Admin area requires login; staff accounts only, no public signup.
+- Roles stored in a dedicated roles table (never on the profile record) and checked server-side — no client-side or localStorage admin checks.
+- Row-level security on every table so customers' data is only readable by authenticated staff.
+- No hardcoded secrets; all keys read server-side only inside server function handlers.
 - Contact form and chatbot input validated with Zod, with length caps and server-side abuse limits.
 - Chatbot calls the AI provider only from the server; no AI key ever reaches the browser.
 - Chatbot replies rendered as sanitized markdown — no raw HTML injection.
+- The scheduled reminder endpoint verifies its caller credential before doing any work.
+- Every email send and admin action is written to an audit log.
 - WhatsApp, email, and map links use proper URL encoding.
-- No auth/roles required for a public showroom site.
 
 ## Assets needed
 
@@ -111,17 +115,26 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 ## Technical notes
 
 - Stack: TanStack Start + React 19 + Tailwind v4 + shadcn/ui components.
-- Bike inventory and showroom contact details live in typed data files (`src/data/bikes.ts`, `src/data/showroom.ts`).
-- Contact form uses `createServerFn`; chatbot uses a `createServerFn` streaming/chat handler backed by Lovable AI.
-- Lovable Cloud is enabled to power the chatbot backend and store contact enquiries.
+- Lovable Cloud provides the database, staff authentication, and scheduled jobs.
+- Tables: `bikes`, `enquiries`, `customers`, `service_records`, `reminders`, `email_log`, `activity_log`, `chat_conversations`, `user_roles`.
+- Public pages stay SSR and fast; the admin area sits behind an authenticated route group.
+- Chatbot and contact form run through server functions backed by Lovable AI and Lovable Cloud.
+- Reminder automation: a daily scheduled job hits a protected endpoint that queries due reminders and sends emails via Lovable Email.
 - Map deep-link helper is a small client-side utility gated behind hydration.
-- All content routes are SSR for fast first paint and SEO.
+
+## Assumptions (tell me if any are wrong)
+
+- Staff accounts are created by you; there is no public registration.
+- Reminder emails are sent from your showroom email address once the domain is verified.
+- Default service interval is 90 days from the last service (adjustable in the admin settings).
 
 ## Launch checklist
 
 - [ ] Provide real showroom phone, WhatsApp number, Instagram handle, email, address, and hours.
 - [ ] Provide exact showroom coordinates (or Google Maps link) for the map deep-link.
+- [ ] Create the first admin staff account.
+- [ ] Verify the sending email domain for reminder mails.
 - [ ] Replace generated bike images with official Hero MotoCorp assets if available.
 - [ ] Test the map link on both an iPhone and an Android device.
-- [ ] Test contact form and chatbot end-to-end.
+- [ ] Test contact form, chatbot, admin login, and a reminder send end-to-end.
 - [ ] Run build and verify no lint/type errors.
