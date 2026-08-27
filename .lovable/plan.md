@@ -1,0 +1,85 @@
+# Shree Sainath Motors — Website Plan
+
+## Goal
+Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an authorized Hero MotoCorp showroom in Paratwada. The site should turn local search traffic into showroom visits and inquiries.
+
+## Pages & routes
+
+```text
+/              Home (split-screen hero, featured bikes, services, contact CTA)
+/bikes         Bike models / inventory listing
+/services      Sales, finance, insurance, service center details
+/contact       Address, phone, WhatsApp, hours, map, contact form
+```
+
+## Sections to build (per user selection)
+
+1. **Hero / showroom intro**
+   - Split-screen layout: showroom identity and CTA on the left, featured Hero bike visual on the right.
+   - Headline: "Shree Sainath Motors — Authorized Hero MotoCorp Showroom, Paratwada"
+   - Subheadline: new-bike sales, finance, insurance, servicing.
+   - CTAs: "Explore Bikes", "Visit Showroom", "WhatsApp Us".
+
+2. **Bike models / inventory**
+   - Grid of Hero bikes available at the showroom.
+   - Each card: bike image, name, starting price, engine/cc, mileage, key color variants, "View Details" / "Enquire Now" buttons.
+   - Data sourced from a local static data file (no backend required for launch).
+
+3. **Services**
+   - Four service blocks: New Bike Sales, Finance Assistance, Insurance Renewal, Service & Repairs.
+   - Each block: icon, short description, key benefit, CTA.
+
+4. **Contact / visit us**
+   - Full address, phone, WhatsApp number, email, business hours.
+   - Embedded map link/iframe for Paratwada location.
+   - Contact form: name, phone, bike interest, message.
+   - Form submissions handled via a secure server function (no exposed API keys).
+
+## Design system
+
+- **Palette**: Charcoal & Ember
+  - Background: `#1a1a1a`
+  - Surface: `#2d2d2d`
+  - Muted: `#4a4a4a`
+  - Accent: `#e85d3a`
+  - Text: white/off-white on dark.
+- **Typography**: Urbanist (headings) + Epilogue (body).
+- **Layout**: Split-screen hero; full-width bands for bikes, services, and contact.
+- **Radius / spacing**: Modern, generous whitespace, sharp but polished cards, Ember accent on CTAs.
+
+## SEO & local search
+
+- Unique `head()` metadata (title, description, og:title, og:description, og:type, twitter:card) on every route.
+- Local business JSON-LD (`AutomotiveBusiness` or `MotorcycleDealer`) on `/contact`.
+- Semantic HTML, alt text on all images, responsive viewport.
+- `public/robots.txt` already allows crawlers; add `sitemap.xml` server route.
+- Content optimized for "Hero showroom Paratwada", "Hero bikes Paratwada", "Shree Sainath Motors".
+
+## Security & compliance
+
+- No hardcoded secrets; any third-party keys (email/SMS gateway) read server-side only inside `createServerFn` handlers.
+- Contact form validated with Zod; rate-limited server-side to prevent abuse.
+- No client-side exposure of API keys or admin credentials.
+- No auth/roles required for a public showroom site.
+- `.env` / secrets managed through Lovable secrets if a notification service is added later.
+
+## Assets needed
+
+- Hero bike image (generate or use Hero MotoCorp approved imagery).
+- Bike model images for inventory cards (generate realistic motorcycle studio shots).
+- Showroom exterior/interior photo if available; otherwise generate a placeholder and note replacement.
+
+## Technical notes
+
+- Stack: TanStack Start + React 19 + Tailwind v4 + shadcn/ui components.
+- No backend database needed at launch; bike inventory lives in `src/data/bikes.ts`.
+- Contact form uses `createServerFn` to send email or store submission securely.
+- All routes are static SSR for fast first paint and SEO.
+
+## Launch checklist
+
+- [ ] Replace placeholder contact details with real showroom phone/WhatsApp/address/hours.
+- [ ] Replace generated bike images with official Hero MotoCorp assets if available.
+- [ ] Verify map embed points to the correct Paratwada location.
+- [ ] Test contact form submission end-to-end.
+- [ ] Run build and verify no lint/type errors.
