@@ -78,11 +78,12 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 
 ## Security & compliance
 
-- No hardcoded secrets; any third-party keys (email/SMS gateway) read server-side only inside `createServerFn` handlers.
-- Contact form validated with Zod; rate-limited server-side to prevent abuse.
-- WhatsApp and email links use proper URL encoding; no client-side exposure of API keys or admin credentials.
+- No hardcoded secrets; any third-party keys read server-side only inside `createServerFn` handlers.
+- Contact form and chatbot input validated with Zod, with length caps and server-side abuse limits.
+- Chatbot calls the AI provider only from the server; no AI key ever reaches the browser.
+- Chatbot replies rendered as sanitized markdown — no raw HTML injection.
+- WhatsApp, email, and map links use proper URL encoding.
 - No auth/roles required for a public showroom site.
-- `.env` / secrets managed through Lovable secrets if a notification service is added later.
 
 ## Assets needed
 
@@ -93,14 +94,17 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
 ## Technical notes
 
 - Stack: TanStack Start + React 19 + Tailwind v4 + shadcn/ui components.
-- No backend database needed at launch; bike inventory lives in `src/data/bikes.ts`.
-- Contact form uses `createServerFn` to send email or store submission securely.
-- All routes are static SSR for fast first paint and SEO.
+- Bike inventory and showroom contact details live in typed data files (`src/data/bikes.ts`, `src/data/showroom.ts`).
+- Contact form uses `createServerFn`; chatbot uses a `createServerFn` streaming/chat handler backed by Lovable AI.
+- Lovable Cloud is enabled to power the chatbot backend and store contact enquiries.
+- Map deep-link helper is a small client-side utility gated behind hydration.
+- All content routes are SSR for fast first paint and SEO.
 
 ## Launch checklist
 
-- [ ] Replace placeholder contact details with real showroom phone/WhatsApp/Instagram/email/address/hours.
+- [ ] Provide real showroom phone, WhatsApp number, Instagram handle, email, address, and hours.
+- [ ] Provide exact showroom coordinates (or Google Maps link) for the map deep-link.
 - [ ] Replace generated bike images with official Hero MotoCorp assets if available.
-- [ ] Verify map embed points to the correct Paratwada location.
-- [ ] Test contact form submission end-to-end.
+- [ ] Test the map link on both an iPhone and an Android device.
+- [ ] Test contact form and chatbot end-to-end.
 - [ ] Run build and verify no lint/type errors.
