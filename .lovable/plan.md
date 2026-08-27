@@ -37,9 +37,24 @@ Build a fast, SEO-friendly, mobile-first website for Shree Sainath Motors, an au
    - Clickable WhatsApp link with pre-filled greeting.
    - Clickable Instagram profile link.
    - Clickable email mailto link and phone tel link.
-   - Embedded map link/iframe for Paratwada location.
    - Contact form: name, phone, bike/service interest, message.
    - Form submissions handled via a secure server function (no exposed API keys).
+
+5. **Map location with smart deep-link**
+   - Embedded map preview of the Paratwada showroom location.
+   - Clicking the map (or the "Get Directions" button) detects the device and opens the right app:
+     - iOS / macOS: Apple Maps (`maps://` / `https://maps.apple.com/?q=...`)
+     - Android and desktop: Google Maps (`https://www.google.com/maps/search/?api=1&query=...`)
+   - Detection runs client-side only (after hydration) so SSR stays stable.
+   - Fallback to Google Maps web if detection is inconclusive.
+
+6. **AI chatbot assistant**
+   - Floating chat bubble available on every page, styled in the Charcoal & Ember theme.
+   - Answers visitor questions about bike models, prices, finance, insurance, service, showroom hours, and location.
+   - Grounded in the site's own bike and service data plus showroom contact details, so it does not invent facts.
+   - Escalation: offers a "Chat on WhatsApp" or "Call showroom" button when it cannot answer.
+   - Powered by Lovable Cloud + Lovable AI (no external API keys for you to manage).
+
 
 ## Design system
 
