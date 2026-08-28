@@ -1,7 +1,7 @@
 export const SHOWROOM = {
   name: "Shree Sainath Motors",
   tagline: "Authorized Hero MotoCorp Showroom, Paratwada",
-  phone: "+91  92899 22961 ",
+  phone: "+91  92899 22961 ",
   whatsapp: "919999999999",
   email: "shreesainathmotors@gmail.com",
   instagram: "https://instagram.com/shreesainathmotors",
