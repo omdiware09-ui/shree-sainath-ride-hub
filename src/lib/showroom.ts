@@ -1,12 +1,12 @@
 export const SHOWROOM = {
   name: "Shree Sainath Motors",
   tagline: "Authorized Hero MotoCorp Showroom, Paratwada",
-  phone: "+919999999999",
+  phone: "+91  92899 22961 ",
   whatsapp: "919999999999",
   email: "shreesainathmotors@gmail.com",
   instagram: "https://instagram.com/shreesainathmotors",
-  address: "Main Road, Paratwada, Amravati, Maharashtra 444805",
-  hours: "Mon – Sat, 9:30 AM – 8:00 PM · Sunday, 10:00 AM – 2:00 PM",
+  address: "Plot No 01, Amravati Rd, opposite Railway Station, Narayanpur, Harde Nagar, Amravati, Achalpur, Maharashtra 444806",
+  hours: "Mon – Sat, 9:30 AM – 8:30 PM · Sunday, 10:00 AM – 8:30 PM",
   mapQuery: "Shree Sainath Motors, Paratwada, Amravati, Maharashtra",
 } as const;
 
